@@ -72,7 +72,7 @@ This plugin is developed and provided to the WordPress and open data community b
 
 This plugin is submitted to the [Apps4Austria Challenge](http://www.digitales.oesterreich.gv.at/site/7771/default.aspx).
 
-There is a german documentation available at [apps4austria-open-data.ondics.de](http://apps4austria-open-data.ondics.de).
+There is a german documentation available at [apps4austria-open-data.ondics.de](http://apps4austria-open-data.ondics.de/?page_id=357).
 
 The software used for the Open Data Portal for Austria is CKAN. CKAN is the leading open data portal software. Find more about CKAN in german at [ckan.de](http://ckan.de). The CKAN homepage is [ckan.org](http://ckan.org). 
 
@@ -88,13 +88,13 @@ Just download this plugin and get started.
 
 = Why have you developed the Plugin? =
 
-We want to fuel the open data community. Open data often lacks apps and business processes that rely on them. With the plugin we show how to make open data an integral part of a website. Since there are over 12.000 WordPress installations in Austria ( [http://cmscrawler.com/tld/at](Source: CMSCrawler) ), millions of visitors will see open data without recognizing them explicitly. We call that deep open data integration. Please join us to make the world a little bit better using that open data approach.
+We want to fuel the open data community. Open data often lacks apps and business processes that rely on them. With the plugin we show how to make open data an integral part of a website. Since there are over 12.000 WordPress installations in Austria ( [Source: CMSCrawler](http://cmscrawler.com/tld/at) ), millions of visitors will see open data without recognizing them explicitly. We call that deep open data integration. Please join us to make the world a little bit better using that open data approach.
 
 This plugin is submitted to the [Apps4Austria Challenge](http://www.digitales.oesterreich.gv.at/site/7771/default.aspx).
 
 = How to display geo data? =
 
-In a csv-file you just need to have a latitude and a longitude column. The rest is magic. Map areas can be fully handled in GeoJSON format. For the GeoJSON spec see here: [www.geojson.org/]/http://www.geojson.org/).
+In a csv-file you just need to have a latitude and a longitude column. The rest is magic. Map areas can be fully handled in GeoJSON format. For the GeoJSON spec see here: [www.geojson.org]http://www.geojson.org/).
 
 = Will you continue your efforts with this Plugin? =
 
