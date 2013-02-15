@@ -94,7 +94,7 @@ This plugin is submitted to the [Apps4Austria Challenge](http://www.digitales.oe
 
 = How to display geo data? =
 
-In a csv-file you just need to have a latitude and a longitude column. The rest is magic. Map areas can be fully handled in GeoJSON format. For the GeoJSON spec see here: [www.geojson.org]http://www.geojson.org/).
+In a csv-file you just need to have a latitude and a longitude column. The rest is magic. Map areas can be fully handled in GeoJSON format. For the GeoJSON spec see here: [www.geojson.org](http://www.geojson.org/).
 
 = Will you continue your efforts with this Plugin? =
 
