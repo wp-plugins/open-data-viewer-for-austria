@@ -23,6 +23,7 @@ If you're interested in seeing what this plugin has to offer, try out the **Open
 = Features =
 
 Main Features of this plugin include:
+
 - Dataset dropdown selection from the open data portal Austria
 - Simple WordPress shortcodes for data and metadata
 - The tag-assistent makes it even easier to decorate your pages
