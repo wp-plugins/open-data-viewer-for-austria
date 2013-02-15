@@ -67,7 +67,7 @@ In this version, csv and json are supported as data formats.
 - Define your meta data description instead of standard tag description
 
 = Need more Info? =
-This plugin is developed and provided to the WordPress and open data community by [ondics.de](Ondics GmbH) in Esslingen, Germany. 
+This plugin is developed and provided to the WordPress and open data community by [Ondics GmbH](http://ondics.de) in Esslingen, Germany. 
 
 This plugin is submitted to the [Apps4Austria Challenge](http://www.digitales.oesterreich.gv.at/site/7771/default.aspx).
 
