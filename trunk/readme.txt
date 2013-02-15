@@ -23,13 +23,13 @@ If you're interested in seeing what this plugin has to offer, try out the **Open
 = Features =
 
 Main Features of this plugin include:
-* Dataset dropdown selection from the open data portal Austria
-* Simple WordPress shortcodes for data and metadata
-* The tag-assistent makes it even easier to decorate your pages
-* Use the widget to show Open Data in sidebars, footers or anywhere you want
-* Datasets can be displayed in tabular, graphical or map style
-* Datasets can be filtered
-* Sidebar widgets can be enlarged and fly in as popovers
+- Dataset dropdown selection from the open data portal Austria
+- Simple WordPress shortcodes for data and metadata
+- The tag-assistent makes it even easier to decorate your pages
+- Use the widget to show Open Data in sidebars, footers or anywhere you want
+- Datasets can be displayed in tabular, graphical or map style
+- Datasets can be filtered
+- Sidebar widgets can be enlarged and fly in as popovers
 
 All data is displayed live from the open data portal Austria. Forget copy and paste!
 
