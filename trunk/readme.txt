@@ -149,15 +149,15 @@ Display a map of traffic lights with acoustic signals in Vienna:
 
 Display a line chart showing the occupancy of homes for the elderly in Linz up to 2011 (Altenheime in Linz):
 
-<code>[ckan url="http://data.linz.gv.at/katalog/soziales_gesellschaft/senior/staedtische_senioren_pflegeheime/shstadj.csv" metaurl="http://www.data.gv.at/katalog/api/rest/dataset/ogdlinz_belegung-der-staedtischen-senioren-und-pflegeheime" height="300px" width="700px" type="graph" graphType="lines-and-points" series="Zugang weiblich,Abgang weiblich,Zugang m‰nnlich,Abgang m‰nnlich" group="Jahr"]Belegung der st‰dtischen Senioren- und Pflegeheime[/ckan]</code>
+<code>[ckan url="http://data.linz.gv.at/katalog/soziales_gesellschaft/senior/staedtische_senioren_pflegeheime/shstadj.csv" metaurl="http://www.data.gv.at/katalog/api/rest/dataset/ogdlinz_belegung-der-staedtischen-senioren-und-pflegeheime" height="300px" width="700px" type="graph" graphType="lines-and-points" series="Zugang weiblich,Abgang weiblich,Zugang m√§nnlich,Abgang m√§nnlich" group="Jahr"]Belegung der st√§dtischen Senioren- und Pflegeheime[/ckan]</code>
 
 Display this dataset in tabular format:
 
-<code>[ckan url="http://data.linz.gv.at/katalog/soziales_gesellschaft/senior/private_seniorenheime/2010/shprges_2010.csv" metaurl="http://www.data.gv.at/katalog/api/rest/dataset/ogdlinz_belegung-der-staedtischen-senioren-und-pflegeheime" height="210px" width="600px" type="grid" hiddenColumns="Verpflegstage,Personal insgesamt gerechnet als Vollzeitbesch‰ftigte"]Belegung der st‰dtischen Senioren- und Pflegeheime[/ckan]</code>
+<code>[ckan url="http://data.linz.gv.at/katalog/soziales_gesellschaft/senior/private_seniorenheime/2010/shprges_2010.csv" metaurl="http://www.data.gv.at/katalog/api/rest/dataset/ogdlinz_belegung-der-staedtischen-senioren-und-pflegeheime" height="210px" width="600px" type="grid" hiddenColumns="Verpflegstage,Personal insgesamt gerechnet als Vollzeitbesch√§ftigte"]Belegung der st√§dtischen Senioren- und Pflegeheime[/ckan]</code>
 
 Display some meta data about this dataset:
 
-<code>[ckan url="http://data.linz.gv.at/katalog/soziales_gesellschaft/senior/staedtische_senioren_pflegeheime/shstadj.csv" metaurl="http://www.data.gv.at/katalog/api/rest/dataset/ogdlinz_belegung-der-staedtischen-senioren-und-pflegeheime" height="250" width="600" type="metadata" metafields="license_title(Lizenz),maintainer_email(Verantwortlicher),author(Autor),groups(Gruppen)"]Belegung der st‰dtischen Senioren- und Pflegeheime[/ckan]</code>
+<code>[ckan url="http://data.linz.gv.at/katalog/soziales_gesellschaft/senior/staedtische_senioren_pflegeheime/shstadj.csv" metaurl="http://www.data.gv.at/katalog/api/rest/dataset/ogdlinz_belegung-der-staedtischen-senioren-und-pflegeheime" height="250" width="600" type="metadata" metafields="license_title(Lizenz),maintainer_email(Verantwortlicher),author(Autor),groups(Gruppen)"]Belegung der st√§dtischen Senioren- und Pflegeheime[/ckan]</code>
 
 
 == Screenshots ==
