@@ -1,4 +1,4 @@
-=== Open Data Viewer for Austria ===
+﻿=== Open Data Viewer for Austria ===
 Contributors: ondics
 Donate link: http://ondics.de
 Tags: ckan, opendata, open, data, apps, meta, visualization, okfn, austria, table, chart, map, shortcode, sidebar, widget, apps4austria
@@ -186,3 +186,4 @@ Display some meta data about this dataset:
 * Interactive widget with popover enlargement
 * Display datasets as tables, charts or maps
 * Highly configurable by shortcode properties
+
