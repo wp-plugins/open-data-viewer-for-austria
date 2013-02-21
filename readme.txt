@@ -4,7 +4,7 @@ Donate link: http://ondics.de
 Tags: ckan, opendata, open, data, apps, meta, visualization, okfn, austria, table, chart, map, shortcode, sidebar, widget, apps4austria
 Requires at least: 3.3
 Tested up to: 3.5.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -173,6 +173,11 @@ Display some meta data about this dataset:
 9. **Maps**: Configuration of map display
 
 == Changelog ==
+
+= 1.0.1 =
+
+* Improvment of installation process
+* Removed screenshots from plugin folder
 
 = 1.0 =
 
