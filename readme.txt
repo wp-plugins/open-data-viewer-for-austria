@@ -174,6 +174,11 @@ Display some meta data about this dataset:
 
 == Changelog ==
 
+= 1.0.1 =
+
+* Improving installation process
+* Removed screenshots from plugin folder
+
 = 1.0 =
 
 * Select datasets from Open Data for Austria Portal
