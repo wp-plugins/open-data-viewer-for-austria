@@ -1,4 +1,4 @@
-﻿=== Open Data Viewer for Austria ===
+=== Open Data Viewer for Austria ===
 Contributors: ondics
 Donate link: http://ondics.de
 Tags: ckan, opendata, open, data, apps, meta, visualization, okfn, austria, table, chart, map, shortcode, sidebar, widget, apps4austria
@@ -49,20 +49,20 @@ In this version, csv and json are supported as data formats.
 - Hide columns to mask data or to fit display size
 - Arrange columns in new order
 
-2. Use a graphical view for appealing charts and to beautify raw data 
+1. Use a graphical view for appealing charts and to beautify raw data 
 
 - 5 chart styles: bar, line, point, point-line and columns
 - Highly configurable
 - Tooltips show up on mouse over
 
-3. Show geographic data using the interactive map feature with integrated open street map 
+1. Show geographic data using the interactive map feature with integrated open street map 
 
 - Show markers for geo points 
 - Show areas for geo boundary data
 - Unification of markers depending on scale factor
 - Display infoboxes with additional info on click
 
-4. Display meta data of datasets
+1. Display meta data of datasets
 
 - Choose between selected or full meta data display
 - Define your meta data description instead of standard tag description
