@@ -3,7 +3,7 @@
 Plugin Name: Open Data Viewer for Austria
 Plugin URI: http://ckan.de
 Description: Open Data Viewer for Austria brings the full power of open data from Austria to your Wordpress site.
-Version: 1.0
+Version: 1.0.1
 Author: Ondics GmbH
 Author URI: http://ondics.de
 License: None
@@ -43,9 +43,9 @@ function addCKANView ($attr, $content) {
 		'metaurl' => "",
 		'metafields' => "",
 		"format" => ""
-		
+
 	), $attr);
-	
+
 	// Array of options for the viewers on the website
 	$aryOptions = array();
 	switch($attr['type']) {
@@ -87,7 +87,7 @@ function addCKANView ($attr, $content) {
 			);
 		break;
 	}
-	
+
 	$strOptionsJson = json_encode($aryOptions);
 	$str = '
 	<script type="text/javascript">
@@ -108,8 +108,8 @@ function addCKANView ($attr, $content) {
 	<div class="data-explorer-here' . $NumberOfGrids . '" style="width:' . $attr['width'] . 'px;"></div><div style="clear: both;">
 	<div id="" valign="top" style="font-size: 11px; margin-top:0px; padding-top:0px;">';
 	if (!empty($attr["metaurl"])) {
-		$str .= '<a href="'. $attr["metaurl"] .'" class="csstooltip' . $NumberOfGrids . ' csstooltipcls">' . (!empty($content) ? $content : __("Informationen.", "wpckan")) . '<span>' . __("Keine Informationen.", "wpckan") . '</span></a>';	
-	} 
+		$str .= '<a href="'. $attr["metaurl"] .'" class="csstooltip' . $NumberOfGrids . ' csstooltipcls">' . (!empty($content) ? $content : __("Informationen.", "wpckan")) . '<span>' . __("Keine Informationen.", "wpckan") . '</span></a>';
+	}
 	$str .= '</div></div>';
 	return $str;
 }
@@ -167,7 +167,7 @@ class CkanWidget extends WP_Widget
 	$control_ops = array('width' => 400);
     $this->WP_Widget('CkanWidget', 'Open Data Viewer for Austria', $widget_ops, $control_ops);
   }
- 
+
   // Formular aufbauen,
   // @param instance Gespeicherte Werte.
   function form($instance) {
@@ -191,7 +191,7 @@ class CkanWidget extends WP_Widget
 	));
 	require_once (plugin_dir_path( __FILE__ ) . "/formularwidget.php");
   }
- 
+
   // Speichern der Einstellung
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
@@ -212,7 +212,7 @@ class CkanWidget extends WP_Widget
 	$instance['format'] = $new_instance['format'];
     return $instance;
   }
- 
+
   // Anzeige
   function widget($args, $instance)
   {
@@ -221,9 +221,9 @@ class CkanWidget extends WP_Widget
 	echo $before_widget;
     if (!empty($title))
       echo $before_title . $title . $after_title;
-	
+
 	echo '<div class="' . $this->get_field_id( 'data-explorer-here' ) . '" style="margin-top:10px;"></div><div style="clear: both;"></div>';
-	
+
 	if($instance['type'] != "metadata") {  // Link "Vergrößern"
 		if ($instance['opentype'] == "popup")
 			echo '<div class="' . $this->get_field_id( 'ZoomLink' ) . '"><a href="#TB_inline?height=550&width=950&inlineId=' . $this->get_field_id( 'ZoomPopup2' ) . '" title="OpenData CKAN Viewer Austria" class="thickbox" class="openrecline">Vergrößern</a></div>';
@@ -232,24 +232,24 @@ class CkanWidget extends WP_Widget
 	}
 	?>
 		<div id="<?php echo $this->get_field_id( 'ZoomPopup2' ); ?>" style="display:none;">
-			<div id="<?php echo $this->get_field_id( 'ZoomPopup' ); ?>" style="display:block;">    
+			<div id="<?php echo $this->get_field_id( 'ZoomPopup' ); ?>" style="display:block;">
 				<div class="<?php echo $this->get_field_id( 'data-explorer-popup' ); ?>"></div><div style="clear: both;"></div>
 			</div>
 		</div>
 		<style type="text/css">
             #TB_overlay { z-index:1000; }
-            
+
             #TB_window {
                 z-index:1001;
                 height:570px !important;
                 margin-top: -300px !important;
             }
-                
+
             #TB_ajaxContent {
-                height:540px !important; 
+                height:540px !important;
             }
 		</style>
-		
+
 		<script type="text/javascript">
 		jQuery(function($) {
 			var widgetWidth = $(".widget-area").width(); // get the sidebar width
@@ -262,7 +262,7 @@ class CkanWidget extends WP_Widget
 			var url = "<?php echo urlencode($instance['url']); ?>";
 			var strFilters = "<?php echo $instance['filters']; ?>";
 			var strFormat = "<?php echo $instance['format']; ?>";
-			
+
 			switch (strType) {
 				case "metadata":
 					objOptions = {metafields: "<?php echo $instance['metafields']; ?>", metaurl: "<?php echo $instance['metaurl']; ?>"};
@@ -278,7 +278,7 @@ class CkanWidget extends WP_Widget
 				wpCKANReclineViewer.createDataViewer("#<?php echo $this->get_field_id( 'ZoomPopup' ); ?>", url, strType, objOptions, strFilters, "<?php echo plugins_url("/proxy.php?url=", __FILE__); ?>",popupHeight, popupWidth); // Widget im Popup
 			});
 		});
-		
+
 		</script>
 	<?php
     echo $after_widget;

@@ -176,7 +176,7 @@ Display some meta data about this dataset:
 
 = 1.0.1 =
 
-* Improvment of installation process
+* Improving installation process
 * Removed screenshots from plugin folder
 
 = 1.0 =
