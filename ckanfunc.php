@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Open Data Viewer for Austria
-Plugin URI: http://ckan.de
+Plugin URI: http://apps4austria-open-data.ondics.de
 Description: Open Data Viewer for Austria brings the full power of open data from Austria to your Wordpress site.
 Version: 1.0.2
 Author: Ondics GmbH
