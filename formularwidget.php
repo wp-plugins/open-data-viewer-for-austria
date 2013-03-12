@@ -361,7 +361,7 @@
                 </td>
             </tr>
         </table> 
-        <script type="text/javascript" src="<?php echo plugins_url("/recline/app.js", __FILE__); ?>"></script>
+        <script type="text/javascript" src="<?php echo plugins_url("/recline/initRecline.js", __FILE__); ?>"></script>
         <div id="TableEditorContainer" style="display:none; z-index:999;">            
             <div class="data-explorer-here" style="margin-top:10px;"></div>
             

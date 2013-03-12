@@ -12,7 +12,7 @@ if (isset($aryCKanWidgets[$id])) {
     <html>
     <head>
         <?php wp_head(); ?>
-        <script type="text/javascript" src="recline/app.js"> </script>
+        <script type="text/javascript" src="recline/initRecline.js"> </script>
 		<title>Open Data Viewer for Austria</title>
     </head>
     <body>
