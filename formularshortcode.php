@@ -1,7 +1,6 @@
-      
-        <script type="text/javascript">
-        
-            var strProxy = "<?php echo plugins_url("/proxy.php?url=", __FILE__); ?>"; // IE 8 braucht das...
+
+<script type="text/javascript">
+            var strProxy = "<?php echo plugins_url('/proxy.php?url=', __FILE__); ?>"; // IE 8 braucht das...
             // CKAN Urls -> API V. 1.0
             var strCkanLink = "http://www.data.gv.at/";
             var strDataPool = strCkanLink + "katalog/api/";
@@ -14,7 +13,8 @@
             
             jQuery(document).ready(function($) {
                 // Tooltip für Metadaten
-                jQuery( document ).tooltip();  
+                //jQuery( document ).tooltip();  
+                
                 // Wenn Typ der Anzeige gewählt wird entsprechenden Container anzeigen
                 jQuery(document).find(":input[name='wpCKANDataViewer[type]']").change(function() {
                     jQuery(document).find(".TypeContainer").hide();
@@ -70,7 +70,6 @@
                                 url = strResUrls[strResId];
                             }
                         }
-                        
                         $("#wpCKANDataViewer_url").attr("value", url);
                     }
                 }).change();
@@ -78,7 +77,7 @@
             
             // Funktion läd Tags und zeigt diese in der ComboBox an
             function getCategories() {
-                $.ajax({
+                jQuery.ajax({
                     url: strProxy + encodeURIComponent(strDataPool + strTaglist),
                     dataType: "json"
                 }).done(function(result) {
@@ -94,7 +93,7 @@
             }
             // Funktion läd die Datensätze zu einem Tag und fühlt dann die Ressourcencombobox
             function getDataset(strTagname) {
-                $.ajax({
+                jQuery.ajax({
                     url: strProxy + encodeURIComponent(strDataPool + strSearchDS + "?tags=" + strTagname + "&all_fields=1"),
                     dataType: "json"
                 }).done(function(result) {
@@ -119,7 +118,7 @@
                                 $("#wpCKANDataViewer_ds").html("");
                                 $("#wpCKANDataViewer_res").html("");
                                 $("#wpCKANDataViewer_url").attr("value", "");
-                                $("#message_error").html("<p><b>Fehler:</b> <?php _e("Unter diesem Stichwort gibt es keine für uns lesbaren Daten.", "wpckan"); ?></p>").show();
+                                $("#message_error").html("<p><b>Fehler:</b> <?php _e('Unter diesem Stichwort gibt es keine für uns lesbaren Daten.', 'wpckan'); ?></p>").show();
                             }
                         }).change();
                     }
@@ -190,7 +189,6 @@
                     $(this).attr("class", "MetaProb").unbind("click").live("click",clicklistener);
                 }
             }
-            
         </script>
         <style type="text/css">
             .TypeContainer {
@@ -262,7 +260,7 @@
                 <th scope="row"><label for="wpCKANDataViewer_Size"><?php _e('Größe:')?></label></th>
                 <td>
                     <?php _e('Höhe:')?> <input type="text" size="5" name="wpCKANDataViewer[height]" id="wpCKANDataViewer_height" value="250"/> 
-                   <?php _e('Breite:')?> <input type="text" size="5" name="wpCKANDataViewer[width]" id="wpCKANDataViewer_width" value="400"/> 
+                    <?php _e('Breite:')?> <input type="text" size="5" name="wpCKANDataViewer[width]" id="wpCKANDataViewer_width" value="400"/> 
                 </td>
             </tr>
             <tr valign="top">
@@ -287,7 +285,6 @@
                 </td>
             </tr>
         </table> 
-        <script type="text/javascript" src="<?php echo plugins_url("/recline/app.js", __FILE__); ?>"></script>
         <script type="text/javascript">
             jQuery(function($) {
                 $(".TypeContainer > a").click(function() {

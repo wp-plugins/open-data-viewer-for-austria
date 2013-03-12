@@ -1,10 +1,10 @@
-=== Open Data Viewer for Austria ===
+﻿=== Open Data Viewer for Austria ===
 Contributors: ondics
 Donate link: http://ondics.de
 Tags: ckan, opendata, open, data, apps, meta, visualization, okfn, austria, table, chart, map, shortcode, sidebar, widget, apps4austria
 Requires at least: 3.3
 Tested up to: 3.5.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -174,9 +174,14 @@ Display some meta data about this dataset:
 
 == Changelog ==
 
+= 1.0.3 =
+
+* Resolved conflicts in admin-backend after plugin installation (Image upload, stylesheet)
+* Improved plugin speed (loading on demand only)
+
 = 1.0.2 =
 
-* Replaced cUrl as Plugin Requrement by internal Wordpress-Functions to make Plugin work with more Wordpress-Installations and more Hosting Services 
+* Replacing cUrl with WordPress stuff
 
 = 1.0.1 =
 

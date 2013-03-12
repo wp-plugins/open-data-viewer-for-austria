@@ -17,9 +17,12 @@ this.recline.Backend.GeoJson = this.recline.Backend.GeoJson || {};
         });
         var dfd = $.Deferred();
         _wrapInTimeout(jqxhr).done(function(results) {
+
         if (results.error) {
             dfd.reject(results.error);
         }
+
+        
           
         var normalizedRecs = _normalizeRecords(results.features);
         this.data = normalizedRecs;
