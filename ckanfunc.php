@@ -3,7 +3,7 @@
 Plugin Name: Open Data Viewer for Austria
 Plugin URI: http://apps4austria-open-data.ondics.de
 Description: Open Data Viewer for Austria brings the full power of open data from Austria to your Wordpress site.
-Version: 1.0.3
+Version: 1.0.4
 Author: Ondics GmbH
 Author URI: http://ondics.de
 License: None
@@ -142,11 +142,11 @@ function add_recline_scripts_admin($hook) {
 		// Enqueue Styles
 		echo '<link rel="stylesheet/less" type="text/css" href="' . $path . "vendor/bootstrap/2.0.2/css/bootstrap.css" . '">';
 		wp_enqueue_style( 'wpckanstyle-leaflet', 	$path . "vendor/leaflet/0.4.4/leaflet.css");
-		if($browser["browser"] == 'msie' && $browser["version"] <= 8)
+		if(isset($browser["msie"]) && $browser["msie"] < 9)
 			wp_enqueue_style( 'wpckanstyle-leaflet-ie', 	$path . "vendor/leaflet/0.4.4/leaflet.ie.css");
 		wp_enqueue_style( 'wpckanstyle-marker', 	$path . "vendor/leaflet.markercluster/MarkerCluster.css");
 		wp_enqueue_style( 'wpckanstyle-marker-default', $path . "vendor/leaflet.markercluster/MarkerCluster.Default.css");
-		if($browser["browser"] == 'msie' && $browser["version"] <= 8)
+		if(isset($browser["msie"]) && $browser["msie"] < 9)
 			wp_enqueue_style( 'wpckanstyle-marker-ie', 	$path . "vendor/leaflet.markercluster/MarkerCluster.Default.ie.css");
 		wp_enqueue_style( 'wpckanstyle-slickgrid', 	$path . "vendor/slickgrid/2.0.1/slick.grid.css");
 		wp_enqueue_style( 'wpckanstyle-grid', 		$path . "css/grid.css");
@@ -166,9 +166,9 @@ function add_recline_scripts_admin($hook) {
 		wp_enqueue_script( 'wpckan-slickgrid-jqueryui', $path . "vendor/slickgrid/2.0.1/jquery-ui-1.8.16.custom.min.js" );
 		wp_enqueue_script( 'wpckan-slickgrid-eventdrag', $path . "vendor/slickgrid/2.0.1/jquery.event.drag-2.0.min.js" );
 		wp_enqueue_script( 'wpckan-slickgrid', $path . "vendor/slickgrid/2.0.1/slick.grid.min.js" );
-		if($browser["browser"] == 'msie' && $browser["version"] <= 7)
+		if(isset($browser["msie"]) && $browser["msie"] < 8)
 			wp_enqueue_script( 'wpckan-json2', $path . "vendor/json/json2.js" );
-		if($browser["browser"] == 'msie' && $browser["version"] < 9)
+		if(isset($browser["msie"]) && $browser["msie"] < 9)
 			wp_enqueue_script( 'wpckan-flashcanvas', $path . "vendor/FlashCanvas/bin/flashcanvas.js" );
 		wp_enqueue_script( 'wpckan-ecma-fixes', $path . "src/ecma-fixes.js" );
 		wp_enqueue_script( 'wpckan-model', $path . "src/model.js" );
@@ -202,11 +202,11 @@ function add_recline_scripts_wp() {
 		
 		// Enqueue Styles
 		wp_enqueue_style( 'wpckanstyle-leaflet', 	$path . "vendor/leaflet/0.4.4/leaflet.css");
-		if($browser["browser"] == 'msie' && $browser["version"] <= 8)
+		if(isset($browser["msie"]) && $browser["msie"] < 9)
 			wp_enqueue_style( 'wpckanstyle-leaflet-ie', 	$path . "vendor/leaflet/0.4.4/leaflet.ie.css");
 		wp_enqueue_style( 'wpckanstyle-marker', 	$path . "vendor/leaflet.markercluster/MarkerCluster.css");
 		wp_enqueue_style( 'wpckanstyle-marker-default', $path . "vendor/leaflet.markercluster/MarkerCluster.Default.css");
-		if($browser["browser"] == 'msie' && $browser["version"] <= 8)
+		if(isset($browser["msie"]) && $browser["msie"] < 9)
 			wp_enqueue_style( 'wpckanstyle-marker-ie', 	$path . "vendor/leaflet.markercluster/MarkerCluster.Default.ie.css");
 		wp_enqueue_style( 'wpckanstyle-slickgrid', 	$path . "vendor/slickgrid/2.0.1/slick.grid.css");
 		wp_enqueue_style( 'wpckanstyle-grid', 		$path . "css/grid.css");
@@ -224,9 +224,9 @@ function add_recline_scripts_wp() {
 		wp_enqueue_script( 'wpckan-slickgrid-jqueryui', $path . "vendor/slickgrid/2.0.1/jquery-ui-1.8.16.custom.min.js" );
 		wp_enqueue_script( 'wpckan-slickgrid-eventdrag', $path . "vendor/slickgrid/2.0.1/jquery.event.drag-2.0.min.js" );
 		wp_enqueue_script( 'wpckan-slickgrid', $path . "vendor/slickgrid/2.0.1/slick.grid.min.js" );
-		if($browser["browser"] == 'msie' && $browser["version"] <= 7)
+		if(isset($browser["msie"]) && $browser["msie"] < 8)
 			wp_enqueue_script( 'wpckan-json2', $path . "vendor/json/json2.js" );
-		if($browser["browser"] == 'msie' && $browser["version"] < 9)
+		if(isset($browser["msie"]) && $browser["msie"] < 9)
 			wp_enqueue_script( 'wpckan-flashcanvas', $path . "vendor/FlashCanvas/bin/flashcanvas.js" );
 		wp_enqueue_script( 'wpckan-ecma-fixes', $path . "src/ecma-fixes.js" );
 		wp_enqueue_script( 'wpckan-model', $path . "src/model.js" );

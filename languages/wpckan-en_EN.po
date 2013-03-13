@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wpCkan\n"
-"POT-Creation-Date: 2013-02-06 11:12+0100\n"
-"PO-Revision-Date: 2013-02-06 11:12+0100\n"
+"POT-Creation-Date: 2013-03-13 12:35+0100\n"
+"PO-Revision-Date: 2013-03-13 12:37+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -12,111 +12,142 @@ msgstr ""
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: G:\\kunden\\wpckan\\wwwroot\\wp-content\\plugins"
+"X-Poedit-SearchPath-0: K:\\kunden\\wpckan\\wwwroot\\wp-content\\plugins"
 "\\ckan\n"
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/ckanfunc.php:110
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/ckanfunc.php:122
 msgid "Informationen."
 msgstr "Information."
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/ckanfunc.php:110
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/ckanfunc.php:122
 msgid "Keine Informationen."
 msgstr "No information."
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:122
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:169
-msgid "Unter diesem Stichwort gibt es keine für uns lesbaren Daten."
-msgstr "Under this tag is no readable data for us."
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:118
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:171
+msgid "Unter diesem Stichwort gibt es keine CSV oder JSON Daten."
+msgstr "Under this tag is no readable CSV or JSON data for us."
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:238
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:307
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:228
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:258
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:309
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:339
+msgid "Schritt"
+msgstr "Step"
+
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:228
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:309
+msgid "Auswahl"
+msgstr "Selection"
+
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:231
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:312
 msgid "Stichwort:"
 msgstr "Tag:"
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:244
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:313
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:237
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:318
 msgid "Datensatz:"
 msgstr "Data:"
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:250
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:319
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:243
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:324
 msgid "Ressource:"
 msgstr "Resource:"
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:256
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:325
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:251
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:332
+msgid "ausgewählte Rohdaten:"
+msgstr "selected data"
+
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:258
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:339
+msgid "Konfiguration"
+msgstr "Configuration"
+
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:262
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:342
 msgid "Datenbeschreibung:"
 msgstr "Data description:"
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:262
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:331
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:268
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:348
 msgid "Größe:"
 msgstr "Size:"
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:264
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:270
 msgid "Höhe:"
 msgstr "Height:"
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:265
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:271
 msgid "Breite:"
 msgstr "Width:"
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:269
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:275
 msgid "Typ:"
 msgstr "Type:"
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:271
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:339
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:277
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:356
 msgid "Tabelle"
 msgstr "Table"
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:273
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:341
-msgid "Tabelle anzeigen."
-msgstr "Show table."
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:279
+msgid "Tabelle konfigurieren."
+msgstr "Config table."
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:275
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:343
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:281
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:360
 msgid "Graph"
 msgstr "Graph"
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:277
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:345
-msgid "Graph anzeigen."
-msgstr "Show graph."
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:283
+msgid "Graph konfigurieren."
+msgstr "Config graph"
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:279
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:347
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:285
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:364
 msgid "Map"
 msgstr "Map"
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:281
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:349
-msgid "Map anzeigen."
-msgstr "Show Map."
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:287
+msgid "Map konfigurieren."
+msgstr "Config map."
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:283
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:351
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:289
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:368
 msgid "Metadaten"
 msgstr "Metadata"
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:307
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:368
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:313
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:386
 msgid "Änderungen speichern"
 msgstr "Save changes"
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:311
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularshortcode.php:317
 msgid "Einfügen"
 msgstr "Insert"
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:357
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:358
+msgid "Tabelle konfiguration."
+msgstr "Config table."
+
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:362
+msgid "Graph konfiguration."
+msgstr "Config graph."
+
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:366
+msgid "Map konfiguration."
+msgstr "Config map."
+
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:374
 msgid "Öffnen als..."
 msgstr "Open as..."
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:359
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:376
 msgid "Popup-Fenster"
 msgstr "Popup-Window"
 
-#: G:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:360
+#: K:\kunden\wpckan\wwwroot\wp-content\plugins\ckan/formularwidget.php:377
 msgid "neuer Tab"
 msgstr "new tab"

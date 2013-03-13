@@ -44,13 +44,8 @@
                             window.ReclineData.Graph = window.dataExplorer.state.attributes["view-graph"];
                             break;
                     }
-                    //window.ReclineData.transform = JSON.stringify($('.expression-preview-code').attr("value"));
-                    //window.ReclineData.transform = window.ReclineData.transform.replace(/\[/g, "(LSB)").replace(/\]/g, "(RSB)").replace(/"/gi, "");
+
                     window.ReclineData.filters = JSON.stringify(window.dataExplorer.state.get("query").filters).replace(/"/gi, "'").replace("]", "").replace("[", "");
-                    // console.log(window.ReclineData.transform);
-                    //var query = window.dataExplorer.state.get("query");
-                    //delete query.filters;
-                    //window.ReclineData.filters = JSON.stringify(query).replace(/"/gi, "'").replace("]", "").replace("[", "");
                     return wpCKANDataViewerAdmin.sendToEditor($("#wpckan-form"), 'wpCKANDataViewer', window.ReclineData);
                 });
                 
@@ -70,6 +65,8 @@
                                 url = strResUrls[strResId];
                             }
                         }
+                        $("#rohdatenlink a").attr("href", url).text(url);
+                        $("#rohdatenlink").show();
                         $("#wpCKANDataViewer_url").attr("value", url);
                     }
                 }).change();
@@ -118,7 +115,8 @@
                                 $("#wpCKANDataViewer_ds").html("");
                                 $("#wpCKANDataViewer_res").html("");
                                 $("#wpCKANDataViewer_url").attr("value", "");
-                                $("#message_error").html("<p><b>Fehler:</b> <?php _e('Unter diesem Stichwort gibt es keine für uns lesbaren Daten.', 'wpckan'); ?></p>").show();
+                                $("#message_error").html("<p><b>Fehler:</b> <?php _e('Unter diesem Stichwort gibt es keine CSV oder JSON Daten.', 'wpckan'); ?></p>").show();
+                                $("#rohdatenlink").hide();
                             }
                         }).change();
                     }
@@ -222,16 +220,13 @@
                 height: 450px;
             }
         </style>
-        <table class="form-table" id="wpckan-form">
-            <input type="hidden" name="wpCKANDataViewer[url]" id="wpCKANDataViewer_url" class=".wpckan_url" value=""/>
-            <input type="hidden" name="wpCKANDataViewer[metaurl]" id="wpCKANDataViewer_metaurl" value=""/>
-            <input type="hidden" name="wpCKANDataViewer[format]" id="wpCKANDataViewer_format" value=""/>
-            <tr valign="top">
-                <th scope="row"></th>
-                <td style="padding-bottom:0px;">
-                    <div style="width:380px; margin: 0px !important; display:none;" id="message_error" class="error below-h2"></div>
-                </td>
-            </tr>
+        <div id="wpckan-form">
+        <input type="hidden" name="wpCKANDataViewer[url]" id="wpCKANDataViewer_url" class=".wpckan_url" value=""/>
+        <input type="hidden" name="wpCKANDataViewer[metaurl]" id="wpCKANDataViewer_metaurl" value=""/>
+        <input type="hidden" name="wpCKANDataViewer[format]" id="wpCKANDataViewer_format" value=""/>
+        <table class="form-table">
+       <br /><span><b><?php _e('Schritt', 'wpckan')?> 1: <?php _e('Auswahl', 'wpckan')?></b></span>
+        <table class="form-table">
             <tr valign="top">
                 <th scope="row"><label for="wpCKANDataViewer_kat"><?php _e('Stichwort:', 'wpckan')?></label></th>
                 <td>
@@ -250,6 +245,19 @@
                     <select style="width:250px" name="wpCKANDataViewer[res]" id="wpCKANDataViewer_res"></select>
                 </td>
             </tr>
+        </table>
+        <table class="form-table">
+            <tr valign="top">
+                <th scope="row"><label for="wpCKANDataViewer_content"><?php _e('ausgewählte Rohdaten:', 'wpckan')?></label></th>
+                <td>
+                    <div style="width:380px; margin: 0px !important; display:none;" id="message_error" class="error below-h2"></div>
+                    <div id="rohdatenlink" style="display:none;"><img src="<?php echo plugins_url('/accept-icon.png', __FILE__); ?>" height="16" style="vertical-align:middle;" /> <a href="" target="_blank">-</a></div>
+                </td>
+            </tr>
+        </table>
+       <br /><span><b><?php _e('Schritt', 'wpckan')?> 2: <?php _e('Konfiguration', 'wpckan')?></b></span>
+        <br />
+        <table class="form-table">
             <tr valign="top">
                 <th scope="row"><label for="wpCKANDataViewer_content"><?php _e('Datenbeschreibung:', 'wpckan')?></label></th>
                 <td>
@@ -268,15 +276,15 @@
                 <td>
                     <input type="radio" name="wpCKANDataViewer[type]" value="grid" checked="checked" id="wpCKANDataViewer_type_grid"> <? _e("Tabelle", "wpckan"); ?><br>
                     <div id="TableContainer" class="TypeContainer" style="display: block;">
-                        <a href="#TB_inline?height=550&width=950&inlineId=TableEditorContainer" title="OpenData CKAN Viewer Austria" class="thickbox" class="openrecline"><? _e("Tabelle anzeigen.", "wpckan"); ?></a>
+                        <a href="#TB_inline?height=550&width=950&inlineId=TableEditorContainer" title="OpenData CKAN Viewer Austria" class="thickbox" class="openrecline"><? _e("Tabelle konfigurieren.", "wpckan"); ?></a>
                     </div>
                     <input type="radio" name="wpCKANDataViewer[type]" value="graph" id="wpCKANDataViewer_type_graph"> <? _e("Graph", "wpckan"); ?><br>
                     <div id="GraphContainer" class="TypeContainer">
-                        <a href="#TB_inline?height=550&width=950&inlineId=TableEditorContainer" title="OpenData CKAN Viewer Austria" class="thickbox" class="openrecline"><? _e("Graph anzeigen.", "wpckan"); ?></a>
+                        <a href="#TB_inline?height=550&width=950&inlineId=TableEditorContainer" title="OpenData CKAN Viewer Austria" class="thickbox" class="openrecline"><? _e("Graph konfigurieren.", "wpckan"); ?></a>
                     </div>
                     <input type="radio" name="wpCKANDataViewer[type]" value="map" id="wpCKANDataViewer_type_map"> <? _e("Map", "wpckan"); ?></br>
                     <div id="MapContainer" class="TypeContainer">
-                        <a href="#TB_inline?height=550&width=950&inlineId=TableEditorContainer" title="OpenData CKAN Viewer Austria" class="thickbox" class="openrecline"><? _e("Map anzeigen.", "wpckan"); ?></a>
+                        <a href="#TB_inline?height=550&width=950&inlineId=TableEditorContainer" title="OpenData CKAN Viewer Austria" class="thickbox" class="openrecline"><? _e("Map konfigurieren.", "wpckan"); ?></a>
                     </div>
                     <input type="radio" name="wpCKANDataViewer[type]" value="metadata" id="wpCKANDataViewer_type_metadata"> <? _e("Metadaten", "wpckan"); ?></br>
                     <div id="MetadataContainer" class="TypeContainer">
@@ -284,7 +292,8 @@
                     </div>
                 </td>
             </tr>
-        </table> 
+        </table>
+        </div>
         <script type="text/javascript">
             jQuery(function($) {
                 $(".TypeContainer > a").click(function() {
