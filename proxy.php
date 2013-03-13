@@ -7,7 +7,8 @@ $url = urldecode(($_GET['url']));
 $url = str_replace(" ","%20",$url);
 if (strpos($url, "pop") !== FALSE) return ""; // http://www.heise.de/newsticker/meldung/cURL-auf-Abwegen-1800433.html
 
-$output = wp_remote_retrieve_body(wp_remote_get($url, array("user-agent" => "Mozilla/5.0 (Windows NT 6.1; rv:17.0) Gecko/20100101 Firefox/17.0"))); // using a common useragent to prevent blocking from some server
+$response = wp_remote_get($url, array("user-agent" => "Mozilla/5.0 (Windows NT 6.1; rv:17.0) Gecko/20100101 Firefox/17.0", 'sslverify' => false, 'timeout' => '1200', "redirection" => 5 ));
+$output = wp_remote_retrieve_body($response); // using a common useragent to prevent blocking from some server
 
 // this code converts to utf-8 when needed. But mb_check_encoding is critical code! http://de2.php.net/manual/de/function.mb-check-encoding.php
 if(!mb_check_encoding($output, 'UTF-8')) { // only convert when string is not utf-8
