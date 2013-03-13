@@ -94,8 +94,6 @@
                                 url = strResUrls[strResId];
                             }
                         }
-                        $("#rohdatenlink a").attr("href", url).text(url);
-                        $("#rohdatenlink").show();
                         $("#<?php echo $this->get_field_id( 'url' ); ?>").attr("value", url);
                     }
                 }).change();
@@ -168,8 +166,7 @@
                                 $("#<?php echo $this->get_field_id( 'combods' ); ?>").html("");
                                 $("#<?php echo $this->get_field_id( 'combores' ); ?>").html("");
                                 $("#<?php echo $this->get_field_id( 'url' ); ?>").attr("value", "");
-                                $("#message_error").html("<p><b>Fehler:</b> <?php _e("Unter diesem Stichwort gibt es keine CSV oder JSON Daten.", "wpckan"); ?></p>").show();
-                                $("#rohdatenlink").hide();
+                                $("#message_error").html("<p><b>Fehler:</b> <?php _e("Unter diesem Stichwort gibt es keine für uns lesbaren Daten.", "wpckan"); ?></p>").show();
                             }
                         }).change()
                     }
@@ -295,8 +292,8 @@
                 height: 450px;
             }
         </style>
-        <div id="wpckan-form">
-        
+        <div style="width:310px; margin: 0px !important; display:none;" id="message_error" class="error below-h2"></div>
+        <table class="form-table" id="wpckan-form">
             <input type="hidden" name="<?php echo $this->get_field_name( 'grid' ); ?>" id="<?php echo $this->get_field_id( 'grid' ); ?>" value='<?php echo ($instance["grid"]); ?>'/>
             <input type="hidden" name="<?php echo $this->get_field_name( 'graph' ); ?>" id="<?php echo $this->get_field_id( 'graph' ); ?>" value="<?php echo ($instance["graph"]); ?>"/>
             <input type="hidden" name="<?php echo $this->get_field_name( 'map' ); ?>" id="<?php echo $this->get_field_id( 'map' ); ?>" value="<?php echo esc_attr($instance["map"]); ?>"/>
@@ -306,8 +303,6 @@
             <input type="hidden" name="<?php echo $this->get_field_name( 'metaurl' ); ?>" id="<?php echo $this->get_field_id( 'metaurl' ); ?>" value=""/>
             <input type="hidden" name="<?php echo $this->get_field_name( 'metafields' ); ?>" id="<?php echo $this->get_field_id( 'metafields' ); ?>" value="<?php echo ($instance["metafields"]); ?>"/>
             <input type="hidden" name="<?php echo $this->get_field_name( 'format' ); ?>" id="<?php echo $this->get_field_id( 'format' ); ?>" value=""/>
-            <br /><span><b><?php _e('Schritt', 'wpckan')?> 1: <?php _e('Auswahl', 'wpckan')?></b></span>
-            <table class="form-table">
             <tr valign="top">
                 <th scope="row"><label for="<?php echo $this->get_field_id('combokat'); ?>"><? _e("Stichwort:", "wpckan"); ?></label></th>
                 <td>
@@ -326,18 +321,6 @@
                     <select style="width:180px" name="<?php echo $this->get_field_name( 'combores' ); ?>" id="<?php echo $this->get_field_id( 'combores' ); ?>"></select>
                 </td>
             </tr>
-            </table>
-            <table class="form-table">
-                <tr valign="top">
-                    <td scope="row" style="width:80px;"><label for="wpCKANDataViewer_content"><?php _e('ausgewählte Rohdaten:', 'wpckan')?></label></td>
-                    <td>
-                        <div style="width:265px; margin: 0px !important; display:none;" id="message_error" class="error below-h2"></div>
-                        <div id="rohdatenlink" style="display:none;"><img src="<?php echo plugins_url('/accept-icon.png', __FILE__); ?>" height="16" style="vertical-align:middle;" /> <a href="" target="_blank">-</a></div>
-                    </td>
-                </tr>
-            </table>
-            <br /><span><b><?php _e('Schritt', 'wpckan')?> 2: <?php _e('Konfiguration', 'wpckan')?></b></span>
-            <table class="form-table">
             <tr valign="top">
                 <th scope="row"><label for="<?php echo $this->get_field_id( 'content' ); ?>"><? _e("Datenbeschreibung:", "wpckan"); ?></label></th>
                 <td>
@@ -355,15 +338,15 @@
                 <td>
                     <input type="radio" name="<?php echo $this->get_field_name( 'type' ); ?>" value="grid" <?php echo ($instance["type"] == 'grid' ? 'checked="checked"' : '')?> id="wpCKANDataViewer_type_grid"> <? _e("Tabelle", "wpckan"); ?><br>
                     <div id="GridContainer" class="TypeContainer">
-                        <a href="#TB_inline?height=550&width=950&inlineId=TableEditorContainer" title="OpenData CKAN Viewer Austria" class="thickbox" class="openrecline"><? _e("Tabelle konfiguration.", "wpckan"); ?></a>
+                        <a href="#TB_inline?height=550&width=950&inlineId=TableEditorContainer" title="OpenData CKAN Viewer Austria" class="thickbox" class="openrecline"><? _e("Tabelle anzeigen.", "wpckan"); ?></a>
                     </div>
                     <input type="radio" name="<?php echo $this->get_field_name( 'type' ); ?>" value="graph" <?php echo ($instance["type"] == 'graph' ? 'checked="checked"' : '')?> id="wpCKANDataViewer_type_graph"> <? _e("Graph", "wpckan"); ?><br>
                     <div id="GraphContainer" class="TypeContainer">
-                        <a href="#TB_inline?height=550&width=950&inlineId=TableEditorContainer" title="OpenData CKAN Viewer Austria" class="thickbox" class="openrecline"><? _e("Graph konfiguration.", "wpckan"); ?></a>
+                        <a href="#TB_inline?height=550&width=950&inlineId=TableEditorContainer" title="OpenData CKAN Viewer Austria" class="thickbox" class="openrecline"><? _e("Graph anzeigen.", "wpckan"); ?></a>
                     </div>
                     <input type="radio" name="<?php echo $this->get_field_name( 'type' ); ?>" value="map" <?php echo ($instance["type"] == 'map' ? 'checked="checked"' : '')?> id="wpCKANDataViewer_type_map"> <? _e("Map", "wpckan"); ?></br>
                     <div id="MapContainer" class="TypeContainer">
-                        <a href="#TB_inline?height=550&width=950&inlineId=TableEditorContainer" title="OpenData CKAN Viewer Austria" class="thickbox" class="openrecline"><? _e("Map konfiguration.", "wpckan"); ?></a>
+                        <a href="#TB_inline?height=550&width=950&inlineId=TableEditorContainer" title="OpenData CKAN Viewer Austria" class="thickbox" class="openrecline"><? _e("Map anzeigen.", "wpckan"); ?></a>
                     </div>
                     <input type="radio" name="<?php echo $this->get_field_name( 'type' ); ?>" value="metadata" <?php echo ($instance["type"] == 'metadata' ? 'checked="checked"' : '')?> id="wpCKANDataViewer_type_metadata"> <? _e("Metadaten", "wpckan"); ?></br>
                     <div id="MetadataContainer" class="TypeContainer">
@@ -377,8 +360,7 @@
                     <input type="radio" name="<?php echo $this->get_field_name( 'opentype' ); ?>" value="tab" <?php echo ($instance["opentype"] == 'tab' ? 'checked="checked"' : '')?> id="wpCKANDataViewer_open_tab"> <? _e("neuer Tab", "wpckan"); ?><br>
                 </td>
             </tr>
-        </table>
-        </div>
+        </table> 
         <script type="text/javascript" src="<?php echo plugins_url("/recline/initRecline.js", __FILE__); ?>"></script>
         <div id="TableEditorContainer" style="display:none; z-index:999;">            
             <div class="data-explorer-here" style="margin-top:10px;"></div>

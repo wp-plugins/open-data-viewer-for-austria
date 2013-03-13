@@ -1,0 +1,72 @@
+
+  <link rel="stylesheet" href="{PATH}vendor/bootstrap/2.0.2/css/bootstrap.css" />
+  <link rel="stylesheet" href="{PATH}vendor/leaflet/0.4.4/leaflet.css">
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="{PATH}vendor/leaflet/0.4.4/leaflet.ie.css" />
+  <![endif]-->
+  <link rel="stylesheet" href="{PATH}vendor/leaflet.markercluster/MarkerCluster.css">
+  <link rel="stylesheet" href="{PATH}vendor/leaflet.markercluster/MarkerCluster.Default.css">
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="{PATH}vendor/leaflet.markercluster/MarkerCluster.Default.ie.css" />
+  <![endif]-->
+  <link rel="stylesheet" href="{PATH}vendor/slickgrid/2.0.1/slick.grid.css">
+
+  <!-- Recline CSS components -->
+  <link rel="stylesheet" href="{PATH}css/grid.css">
+  <link rel="stylesheet" href="{PATH}css/slickgrid.css">
+  <link rel="stylesheet" href="{PATH}css/graph.css">
+  <link rel="stylesheet" href="{PATH}css/map.css">
+  <link rel="stylesheet" href="{PATH}css/multiview.css">
+  <!-- /Recline CSS components -->
+
+  <!-- 3rd party JS libraries -->
+  <script type="text/javascript" src="{PATH}vendor/jquery/1.7.1/jquery.js"></script>
+ 
+  <script type="text/javascript" src="{PATH}vendor/underscore/1.4.2/underscore.js"></script>
+  <script type="text/javascript" src="{PATH}vendor/backbone/0.9.2/backbone.js"></script>
+  <script type="text/javascript" src="{PATH}vendor/mustache/0.5.0-dev/mustache.js"></script>
+  <script type="text/javascript" src="{PATH}vendor/bootstrap/2.0.2/bootstrap.js"></script>
+  <script type="text/javascript" src="{PATH}vendor/flotr2/flotr2.js"></script>
+  <script type="text/javascript" src="{PATH}vendor/leaflet/0.4.4/leaflet.js"></script>
+  <script type="text/javascript" src="{PATH}vendor/leaflet.markercluster/leaflet.markercluster.js"></script>
+  <script type="text/javascript" src="{PATH}vendor/slickgrid/2.0.1/jquery-ui-1.8.16.custom.min.js"></script>
+  <script type="text/javascript" src="{PATH}vendor/slickgrid/2.0.1/jquery.event.drag-2.0.min.js"></script>
+  <script type="text/javascript" src="{PATH}vendor/slickgrid/2.0.1/slick.grid.min.js"></script>
+  <!--<script type="text/javascript" src="{PATH}vendor/moment/1.6.2/moment.js"></script>-->
+  <!--[if lte IE 7]>
+  <script language="javascript" type="text/javascript" src="{PATH}vendor/json/json2.js"></script>
+  <![endif]-->
+  <!--[if lt IE 9]>
+    <script type="text/javascript" src="{PATH}vendor/FlashCanvas/bin/flashcanvas.js"></script>
+  <![endif]-->
+
+    <!-- model and backends -->
+  <script type="text/javascript" src="{PATH}src/ecma-fixes.js"></script>
+  <script type="text/javascript" src="{PATH}src/model.js"></script>
+  <script type="text/javascript" src="{PATH}src/backend.memory.js"></script>
+  <!--<script type="text/javascript" src="{PATH}src/backend.dataproxy.js"></script>-->
+  <script type="text/javascript" src="{PATH}src/backend.csv.js"></script>
+  <script type="text/javascript" src="{PATH}src/backend.geojson.js"></script>
+
+
+
+  <!-- views -->
+  <script type="text/javascript" src="{PATH}src/view.grid.js"></script>
+  <script type="text/javascript" src="{PATH}src/view.slickgrid.js"></script>
+  <script type="text/javascript" src="{PATH}src/view.transform.js"></script>
+  <script type="text/javascript" src="{PATH}src/data.transform.js"></script>
+  <script type="text/javascript" src="{PATH}src/view.graph.js"></script>
+  <script type="text/javascript" src="{PATH}src/view.map.js"></script>
+  <script type="text/javascript" src="{PATH}src/widget.pager.js"></script>
+  <script type="text/javascript" src="{PATH}src/widget.queryeditor.js"></script>
+  <script type="text/javascript" src="{PATH}src/widget.filtereditor.js"></script>
+  <!--<script type="text/javascript" src="{PATH}src/widget.facetviewer.js"></script>-->
+  <script type="text/javascript" src="{PATH}src/widget.fields.js"></script>
+  <script type="text/javascript" src="{PATH}src/view.multiview.js"></script>
+  
+  <script type="text/javascript" src="{PATH}app.js"></script>
+  <style type="text/css">
+  a:hover {background:#ffffff; text-decoration:none;} /*BG color is a must for IE6*/
+  a.csstooltipcls span {display:none; padding:2px 3px; margin-left:8px; width:250px; z-index:5000;}
+  a.csstooltipcls:hover span{display:inline; position:absolute; background:#ffffff; border:1px solid #cccccc; color:#6c6c6c;}
+</style>

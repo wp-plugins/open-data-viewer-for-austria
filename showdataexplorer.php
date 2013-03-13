@@ -11,7 +11,7 @@ if (isset($aryCKanWidgets[$id])) {
 	<!DOCTYPE>
     <html>
     <head>
-        <?php add_recline_scripts_wp(); wp_head(); ?>
+        <?php wp_head(); ?>
         <script type="text/javascript" src="recline/initRecline.js"> </script>
 		<title>Open Data Viewer for Austria</title>
     </head>
@@ -21,8 +21,7 @@ if (isset($aryCKanWidgets[$id])) {
 				background-color: #f5f5f5;
 			}
             .recline-slickgrid {
-                height: 450px !important;
-				width: 940px !important;
+                height: 450px;
             }
             
             .recline-map .map {
@@ -55,7 +54,6 @@ if (isset($aryCKanWidgets[$id])) {
 				padding:5px;
 				background-color:#fff;
 			}
-			
 		</style>
         <script type="text/javascript">
             jQuery(function($) {

@@ -135,18 +135,18 @@ function add_recline_scripts_admin($hook) {
 	if ($hook = "edit.php" || $hook == "widget.php") { // enqueue only if admin on editing page oder widget page
 		$browser = browser_info();
 		$path = plugins_url( '/recline/' , __FILE__ );
-		
+
 		wp_enqueue_script('wpCKANDataViewerAdmin', plugins_url("/handleform.js", __FILE__));
 		wp_enqueue_script( 'wpckan-less', plugins_url("/less-1.3.3.min.js", __FILE__) );
-		
+
 		// Enqueue Styles
 		echo '<link rel="stylesheet/less" type="text/css" href="' . $path . "vendor/bootstrap/2.0.2/css/bootstrap.css" . '">';
 		wp_enqueue_style( 'wpckanstyle-leaflet', 	$path . "vendor/leaflet/0.4.4/leaflet.css");
-		if(isset($browser["msie"]) && $browser["msie"] < 9)
+		if($browser["browser"] == 'msie' && $browser["version"] <= 8)
 			wp_enqueue_style( 'wpckanstyle-leaflet-ie', 	$path . "vendor/leaflet/0.4.4/leaflet.ie.css");
 		wp_enqueue_style( 'wpckanstyle-marker', 	$path . "vendor/leaflet.markercluster/MarkerCluster.css");
 		wp_enqueue_style( 'wpckanstyle-marker-default', $path . "vendor/leaflet.markercluster/MarkerCluster.Default.css");
-		if(isset($browser["msie"]) && $browser["msie"] < 9)
+		if($browser["browser"] == 'msie' && $browser["version"] <= 8)
 			wp_enqueue_style( 'wpckanstyle-marker-ie', 	$path . "vendor/leaflet.markercluster/MarkerCluster.Default.ie.css");
 		wp_enqueue_style( 'wpckanstyle-slickgrid', 	$path . "vendor/slickgrid/2.0.1/slick.grid.css");
 		wp_enqueue_style( 'wpckanstyle-grid', 		$path . "css/grid.css");
@@ -154,7 +154,7 @@ function add_recline_scripts_admin($hook) {
 		wp_enqueue_style( 'wpckanstyle-graph', 		$path . "css/graph.css");
 		wp_enqueue_style( 'wpckanstyle-map', 		$path . "css/map.css");
 		wp_enqueue_style( 'wpckanstyle-multiview',	$path . "css/multiview.css");
-		
+
 		// Enqueue Scripts
 		wp_enqueue_script( 'wpckan-jQuery', $path . "vendor/jquery/1.7.1/jquery.js");
 		wp_enqueue_script( 'wpckan-backbone', $path . "vendor/backbone/0.9.2/backbone.js");
@@ -166,16 +166,16 @@ function add_recline_scripts_admin($hook) {
 		wp_enqueue_script( 'wpckan-slickgrid-jqueryui', $path . "vendor/slickgrid/2.0.1/jquery-ui-1.8.16.custom.min.js" );
 		wp_enqueue_script( 'wpckan-slickgrid-eventdrag', $path . "vendor/slickgrid/2.0.1/jquery.event.drag-2.0.min.js" );
 		wp_enqueue_script( 'wpckan-slickgrid', $path . "vendor/slickgrid/2.0.1/slick.grid.min.js" );
-		if(isset($browser["msie"]) && $browser["msie"] < 8)
+		if($browser["browser"] == 'msie' && $browser["version"] <= 7)
 			wp_enqueue_script( 'wpckan-json2', $path . "vendor/json/json2.js" );
-		if(isset($browser["msie"]) && $browser["msie"] < 9)
+		if($browser["browser"] == 'msie' && $browser["version"] < 9)
 			wp_enqueue_script( 'wpckan-flashcanvas', $path . "vendor/FlashCanvas/bin/flashcanvas.js" );
 		wp_enqueue_script( 'wpckan-ecma-fixes', $path . "src/ecma-fixes.js" );
 		wp_enqueue_script( 'wpckan-model', $path . "src/model.js" );
 		wp_enqueue_script( 'wpckan-backend-memory', $path . "src/backend.memory.js" );
 		wp_enqueue_script( 'wpckan-backend-csv', $path . "src/backend.csv.js" );
 		wp_enqueue_script( 'wpckan-backend-geojson', $path . "src/backend.geojson.js" );
-		
+
 		wp_enqueue_script( 'wpckan-view-grid', $path . "src/view.grid.js" );
 		wp_enqueue_script( 'wpckan-view-slickgrid', $path . "src/view.slickgrid.js" );
 		wp_enqueue_script( 'wpckan-view-transform', $path . "src/view.transform.js" );
@@ -197,16 +197,16 @@ function add_recline_scripts_wp() {
 		$browser = browser_info();
 		$path = plugins_url( '/recline/' , __FILE__ );
 		wp_enqueue_style( 'wpckanstyle-map', 		plugins_url("/tooltip.css", __FILE__));
-		
+
 		wp_enqueue_script( 'wpckan-less', plugins_url("/less-1.3.3.min.js", __FILE__) );
-		
+
 		// Enqueue Styles
 		wp_enqueue_style( 'wpckanstyle-leaflet', 	$path . "vendor/leaflet/0.4.4/leaflet.css");
-		if(isset($browser["msie"]) && $browser["msie"] < 9)
+		if($browser["browser"] == 'msie' && $browser["version"] <= 8)
 			wp_enqueue_style( 'wpckanstyle-leaflet-ie', 	$path . "vendor/leaflet/0.4.4/leaflet.ie.css");
 		wp_enqueue_style( 'wpckanstyle-marker', 	$path . "vendor/leaflet.markercluster/MarkerCluster.css");
 		wp_enqueue_style( 'wpckanstyle-marker-default', $path . "vendor/leaflet.markercluster/MarkerCluster.Default.css");
-		if(isset($browser["msie"]) && $browser["msie"] < 9)
+		if($browser["browser"] == 'msie' && $browser["version"] <= 8)
 			wp_enqueue_style( 'wpckanstyle-marker-ie', 	$path . "vendor/leaflet.markercluster/MarkerCluster.Default.ie.css");
 		wp_enqueue_style( 'wpckanstyle-slickgrid', 	$path . "vendor/slickgrid/2.0.1/slick.grid.css");
 		wp_enqueue_style( 'wpckanstyle-grid', 		$path . "css/grid.css");
@@ -224,16 +224,16 @@ function add_recline_scripts_wp() {
 		wp_enqueue_script( 'wpckan-slickgrid-jqueryui', $path . "vendor/slickgrid/2.0.1/jquery-ui-1.8.16.custom.min.js" );
 		wp_enqueue_script( 'wpckan-slickgrid-eventdrag', $path . "vendor/slickgrid/2.0.1/jquery.event.drag-2.0.min.js" );
 		wp_enqueue_script( 'wpckan-slickgrid', $path . "vendor/slickgrid/2.0.1/slick.grid.min.js" );
-		if(isset($browser["msie"]) && $browser["msie"] < 8)
+		if($browser["browser"] == 'msie' && $browser["version"] <= 7)
 			wp_enqueue_script( 'wpckan-json2', $path . "vendor/json/json2.js" );
-		if(isset($browser["msie"]) && $browser["msie"] < 9)
+		if($browser["browser"] == 'msie' && $browser["version"] < 9)
 			wp_enqueue_script( 'wpckan-flashcanvas', $path . "vendor/FlashCanvas/bin/flashcanvas.js" );
 		wp_enqueue_script( 'wpckan-ecma-fixes', $path . "src/ecma-fixes.js" );
 		wp_enqueue_script( 'wpckan-model', $path . "src/model.js" );
 		wp_enqueue_script( 'wpckan-backend-memory', $path . "src/backend.memory.js" );
 		wp_enqueue_script( 'wpckan-backend-csv', $path . "src/backend.csv.js" );
 		wp_enqueue_script( 'wpckan-backend-geojson', $path . "src/backend.geojson.js" );
-		
+
 		wp_enqueue_script( 'wpckan-view-grid', $path . "src/view.grid.js" );
 		wp_enqueue_script( 'wpckan-view-slickgrid', $path . "src/view.slickgrid.js" );
 		wp_enqueue_script( 'wpckan-view-transform', $path . "src/view.transform.js" );
@@ -257,7 +257,7 @@ function browser_info($agent=null) {
     ')[/ ]+(?<version>[0-9]+(?:\.[0-9]+)?)#';
 
   if (!preg_match_all($pattern, $agent, $matches)) return array();
-  
+
   $i = count($matches['browser'])-1;
   return array($matches['browser'][$i] => $matches['version'][$i]);
 }
