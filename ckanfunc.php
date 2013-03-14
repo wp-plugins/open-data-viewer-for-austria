@@ -132,7 +132,7 @@ function init_thickbox() {
 }
 
 function add_recline_scripts_admin($hook) {
-	if ($hook == "edit.php" || $hook == "widget.php" || $hook == "post.php" || $hook = "post-new.php") { // enqueue only if admin on editing page oder widget page
+	if ($hook == "edit.php" || $hook == "widget.php" || $hook == "post.php" || $hook == "post-new.php") { // enqueue only if admin on editing page oder widget page
 		$browser = browser_info();
 		$path = plugins_url( '/recline/' , __FILE__ );
 
