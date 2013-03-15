@@ -176,7 +176,8 @@ Display some meta data about this dataset:
 
 = 1.0.6 =
 
-* Improvments on admin widget-panel
+* Widget configuration now working in non-accessibility-mode
+* Fixed javascript bug in admin-mode
 
 = 1.0.5 =
 
