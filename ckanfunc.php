@@ -132,7 +132,7 @@ function init_thickbox() {
 }
 
 function add_recline_scripts_admin($hook) {
-	if ($hook == "edit.php" || $hook == "widget.php" || $hook == "post.php" || $hook == "post-new.php") { // enqueue only if admin on editing page oder widget page
+	if ($hook == "edit.php" || $hook == "widgets.php" || $hook == "post.php" || $hook == "post-new.php") { // enqueue only if admin on editing page oder widget page
 		$browser = browser_info();
 		$path = plugins_url( '/recline/' , __FILE__ );
 
@@ -266,11 +266,11 @@ function browser_info($agent=null) {
 // #################WIDGET Code###########################
 class CkanWidget extends WP_Widget
 {
-  function CkanWidget()
+  function __construct()
   {
     $widget_ops = array('classname' => 'CkanWidget', 'description' => 'Open Data Viewer for Austria' );
 	$control_ops = array('width' => 400);
-    $this->WP_Widget('CkanWidget', 'Open Data Viewer for Austria', $widget_ops, $control_ops);
+    parent::__construct('CkanWidget', 'Open Data Viewer for Austria', $widget_ops, $control_ops);
   }
 
   // Formular aufbauen,
@@ -294,7 +294,7 @@ class CkanWidget extends WP_Widget
 		'format' => '',
 		'transform' => ''
 	));
-	require_once (plugin_dir_path( __FILE__ ) . "/formularwidget.php");
+	include (plugin_dir_path( __FILE__ ) . "/formularwidget.php");
   }
 
   // Speichern der Einstellung

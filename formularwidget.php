@@ -12,8 +12,9 @@
             var strResUrls = "";
         
             jQuery(document).ready(function($) {
+                
                 loadHiddenfields();
-                jQuery(document).find("#<?php echo ucfirst($instance["type"]); ?>Container").show();
+                jQuery(document).find("#<?php echo $this->get_field_id( ucfirst($instance["type"]) . "Container" ); ?>").show();
                 jQuery(document).find(":input[name='<?php echo $this->get_field_name( 'type' ); ?>']").change(function() {
                     jQuery(document).find(".TypeContainer").hide();
                     jQuery(this).next().next().toggle();
@@ -31,7 +32,7 @@
                 
                 function setHiddenfields() {
                    window.ReclineData = {};
-                    strVal = $("input[id^=wpCKANDataViewer_type]:radio:checked").attr("value");
+                    strVal = $("input[id^=<?php echo $this->get_field_id( 'wpCKANDataViewer_type' ); ?>]:radio:checked").attr("value");
                     switch(strVal) {
                         case "grid":
                             window.ReclineData = {grid: {hidden: []}};
@@ -66,7 +67,7 @@
                 }
                 
                 $(".TypeContainer > a").click(function() {
-                    var strVal = $("input[id^=wpCKANDataViewer_type]:radio:checked").attr("value");
+                    var strVal = $("input[id^=<?php echo $this->get_field_id( 'wpCKANDataViewer_type' ); ?>]:radio:checked").attr("value");
                     var strFormat = $("#<?php echo $this->get_field_id( 'format' ); ?>").attr("value");
                     var objDefault = <?php echo (empty($instance[$instance["type"]]) || $instance[$instance["type"]] == "{" ? "{}" : $instance[$instance["type"]]); ?>;
                     var strFilterField = "#<?php echo $this->get_field_id( 'filters' ); ?>";
@@ -79,7 +80,7 @@
                     wpCKANReclineEditor.initExplorer(".data-explorer-here", "none", $("#<?php echo $this->get_field_id( 'url' ); ?>").attr("value"), strVal, options, strProxy);
                 });
                 
-                getCategories();
+                
                 $("#<?php echo $this->get_field_id( 'combores' ); ?>").change(function() {
                     if (typeof($("#<?php echo $this->get_field_id( 'combores' ); ?> option:selected").attr("value")) != "undefined") {
                         var aryResValue = $("#<?php echo $this->get_field_id( 'combores' ); ?> option:selected").attr("value").split(",");
@@ -94,8 +95,8 @@
                                 url = strResUrls[strResId];
                             }
                         }
-                        $("#rohdatenlink a").attr("href", url).text(url);
-                        $("#rohdatenlink").show();
+                        $("#<?php echo $this->get_field_id( 'rohdatenlink' ); ?> a").attr("href", url).text(url);
+                        $("#<?php echo $this->get_field_id( 'rohdatenlink' ); ?>").show();
                         $("#<?php echo $this->get_field_id( 'url' ); ?>").attr("value", url);
                     }
                 }).change();
@@ -114,10 +115,10 @@
             function prepareMetadatalist() {
                     var strTag = $("#<?php echo $this->get_field_id( 'combokat' ); ?> option:selected").text();
                     var strId = $("#<?php echo $this->get_field_id( 'combods' ); ?> option:selected").attr("value");
-                    $("#MetadataContainer").show();
+                    $("#<?php echo $this->get_field_id( 'combods' ); ?>").show();
                     getListOfMetadata(strTag, strId);
             }
-            
+            getCategories();
             function getCategories() {
                 $.ajax({
                     url: strProxy + encodeURIComponent(strDataPool + strTaglist),
@@ -137,6 +138,7 @@
             }
             
             function getDataset(strTagname) {
+                if(strTagname != "")
                 $.ajax({
                     url: strProxy + encodeURIComponent(strDataPool + strSearchDS + "?tags=" + strTagname + "&all_fields=1"),
                     dataType: "json"
@@ -156,20 +158,20 @@
                         $("#<?php echo $this->get_field_id( 'combods' ); ?>").change(function() {
                             var strResId = $("#<?php echo $this->get_field_id( 'combods' ); ?> option:selected").attr("value");
                             if (typeof(strResId) != "undefined") {
-                                $("#message_error").hide();
+                                $("#<?php echo $this->get_field_id( 'message_error' ); ?>").hide();
                                 getResource(result["results"][strResId]);
                                 $("#<?php echo $this->get_field_id( 'metaurl' ); ?>").attr("value", strDataPool + strGetDS + "/" + result["results"][0]["name"]);
                                 if($("#<?php echo $this->get_field_id( 'content' ); ?>").attr("value") != "<?php echo ($instance["content"]); ?>")
                                 $("#<?php echo $this->get_field_id( 'content' ); ?>").attr("value", result["results"][0]["title"]);
-                                if ($("input[id^=wpCKANDataViewer_type]:radio:checked").attr("value") == "metadata") {
+                                if ($("input[id^=<?php echo $this->get_field_id( 'wpCKANDataViewer_type' ); ?>]:radio:checked").attr("value") == "metadata") {
                                     prepareMetadatalist();
                                 }
                             } else {
                                 $("#<?php echo $this->get_field_id( 'combods' ); ?>").html("");
                                 $("#<?php echo $this->get_field_id( 'combores' ); ?>").html("");
                                 $("#<?php echo $this->get_field_id( 'url' ); ?>").attr("value", "");
-                                $("#message_error").html("<p><b>Fehler:</b> <?php _e("Unter diesem Stichwort gibt es keine CSV oder JSON Daten.", "wpckan"); ?></p>").show();
-                                $("#rohdatenlink").hide();
+                                $("#<?php echo $this->get_field_id( 'message_error' ); ?>").html("<p><b>Fehler:</b> <?php _e("Unter diesem Stichwort gibt es keine CSV oder JSON Daten.", "wpckan"); ?></p>").show();
+                                $("#<?php echo $this->get_field_id( 'rohdatenlink' ); ?>").hide();
                             }
                         }).change()
                     }
@@ -238,7 +240,7 @@
                             }
                             str += "<tr style='margin:0px; padding:0px;'><td style='margin:0px; padding:2px;'><input type='checkbox' " + (blChecked ? strChecked : "") + " value='" + property + "' name='metafields[" + i + "]' />&nbsp;&nbsp;<b id='MetaProp[" + i + "]' class='MetaProp'>" + strTitle + "</b>: </td></tr><tr><td style='margin:0px; padding:0px;'>" + result[property] + " </td></tr>";
                         }
-                        $("#MetadataContainer").append(str + "</table>");
+                        $("#<?php echo $this->get_field_id( 'combods' ); ?>").append(str + "</table>");
                     }
                 });
                 
@@ -306,6 +308,7 @@
             <input type="hidden" name="<?php echo $this->get_field_name( 'metaurl' ); ?>" id="<?php echo $this->get_field_id( 'metaurl' ); ?>" value=""/>
             <input type="hidden" name="<?php echo $this->get_field_name( 'metafields' ); ?>" id="<?php echo $this->get_field_id( 'metafields' ); ?>" value="<?php echo ($instance["metafields"]); ?>"/>
             <input type="hidden" name="<?php echo $this->get_field_name( 'format' ); ?>" id="<?php echo $this->get_field_id( 'format' ); ?>" value=""/>
+            <b><u>Vor</u> der Konfiguration, bitte einmal Speichern drücken <br />oder Seite neu laden! (im Nichtzugänglichkeitsmodus)</b><br />
             <br /><span><b><?php _e('Schritt', 'wpckan')?> 1: <?php _e('Auswahl', 'wpckan')?></b></span>
             <table class="form-table">
             <tr valign="top">
@@ -331,8 +334,8 @@
                 <tr valign="top">
                     <td scope="row" style="width:80px;"><label for="wpCKANDataViewer_content"><?php _e('ausgewählte Rohdaten:', 'wpckan')?></label></td>
                     <td>
-                        <div style="width:265px; margin: 0px !important; display:none;" id="message_error" class="error below-h2"></div>
-                        <div id="rohdatenlink" style="display:none;"><img src="<?php echo plugins_url('/accept-icon.png', __FILE__); ?>" height="16" style="vertical-align:middle;" /> <a href="" target="_blank">-</a></div>
+                        <div style="width:265px; margin: 0px !important; display:none;" id="<?php echo $this->get_field_id( 'message_error' ); ?>" class="error below-h2"></div>
+                        <div id="<?php echo $this->get_field_id( 'rohdatenlink' ); ?>" style="display:none;"><img src="<?php echo plugins_url('/accept-icon.png', __FILE__); ?>" height="16" style="vertical-align:middle;" /> <a href="" target="_blank">-</a></div>
                     </td>
                 </tr>
             </table>
@@ -351,22 +354,22 @@
                 </td>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="wpCKANDataViewer_type_grid">Typ:</label></th>
+                <th scope="row"><label for="<?php echo $this->get_field_id( 'wpCKANDataViewer_type_grid' ); ?>">Typ:</label></th>
                 <td>
-                    <input type="radio" name="<?php echo $this->get_field_name( 'type' ); ?>" value="grid" <?php echo ($instance["type"] == 'grid' ? 'checked="checked"' : '')?> id="wpCKANDataViewer_type_grid"> <? _e("Tabelle", "wpckan"); ?><br>
-                    <div id="GridContainer" class="TypeContainer">
+                    <input type="radio" name="<?php echo $this->get_field_name( 'type' ); ?>" value="grid" <?php echo ($instance["type"] == 'grid' ? 'checked="checked"' : '')?> id="<?php echo $this->get_field_id( 'wpCKANDataViewer_type_grid' ); ?>"> <? _e("Tabelle", "wpckan"); ?><br>
+                    <div id="<?php echo $this->get_field_id( 'GridContainer' ); ?>" class="TypeContainer">
                         <a href="#TB_inline?height=550&width=950&inlineId=TableEditorContainer" title="OpenData CKAN Viewer Austria" class="thickbox" class="openrecline"><? _e("Tabelle konfiguration.", "wpckan"); ?></a>
                     </div>
-                    <input type="radio" name="<?php echo $this->get_field_name( 'type' ); ?>" value="graph" <?php echo ($instance["type"] == 'graph' ? 'checked="checked"' : '')?> id="wpCKANDataViewer_type_graph"> <? _e("Graph", "wpckan"); ?><br>
-                    <div id="GraphContainer" class="TypeContainer">
+                    <input type="radio" name="<?php echo $this->get_field_name( 'type' ); ?>" value="graph" <?php echo ($instance["type"] == 'graph' ? 'checked="checked"' : '')?> id="<?php echo $this->get_field_id( 'wpCKANDataViewer_type_grid' ); ?>"> <? _e("Graph", "wpckan"); ?><br>
+                    <div id="<?php echo $this->get_field_id( 'GraphContainer' ); ?>" class="TypeContainer">
                         <a href="#TB_inline?height=550&width=950&inlineId=TableEditorContainer" title="OpenData CKAN Viewer Austria" class="thickbox" class="openrecline"><? _e("Graph konfiguration.", "wpckan"); ?></a>
                     </div>
-                    <input type="radio" name="<?php echo $this->get_field_name( 'type' ); ?>" value="map" <?php echo ($instance["type"] == 'map' ? 'checked="checked"' : '')?> id="wpCKANDataViewer_type_map"> <? _e("Map", "wpckan"); ?></br>
-                    <div id="MapContainer" class="TypeContainer">
+                    <input type="radio" name="<?php echo $this->get_field_name( 'type' ); ?>" value="map" <?php echo ($instance["type"] == 'map' ? 'checked="checked"' : '')?> id="<?php echo $this->get_field_id( 'wpCKANDataViewer_type_grid' ); ?>"> <? _e("Map", "wpckan"); ?></br>
+                    <div id="<?php echo $this->get_field_id( 'MapContainer' ); ?>" class="TypeContainer">
                         <a href="#TB_inline?height=550&width=950&inlineId=TableEditorContainer" title="OpenData CKAN Viewer Austria" class="thickbox" class="openrecline"><? _e("Map konfiguration.", "wpckan"); ?></a>
                     </div>
                     <input type="radio" name="<?php echo $this->get_field_name( 'type' ); ?>" value="metadata" <?php echo ($instance["type"] == 'metadata' ? 'checked="checked"' : '')?> id="wpCKANDataViewer_type_metadata"> <? _e("Metadaten", "wpckan"); ?></br>
-                    <div id="MetadataContainer" class="TypeContainer">
+                    <div id="<?php echo $this->get_field_id( 'combods' ); ?>" class="TypeContainer">
                     </div>
                 </td>
             </tr>
