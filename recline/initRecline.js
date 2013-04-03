@@ -99,7 +99,7 @@ var wpCKANReclineEditor = new wpCKANReclineEditor();
 // Erzeugt einen Viewer für die Seite/Widget
 var wpCKANReclineViewer = function () {}
 wpCKANReclineViewer.prototype = {
-    createDataViewer: function (strContainerId, strUrl, strType, objTypeOptions, strFilters, strProxyUrl, height, width) {
+    createDataViewer: function (strContainerId, strUrl, strMetaUrl, strType, objTypeOptions, strFilters, strProxyUrl, height, width) {
         $(strContainerId).html("");
         window.dataExplorer = null;
         window.explorerDiv = $(strContainerId);
@@ -112,10 +112,10 @@ wpCKANReclineViewer.prototype = {
         window.dataExplorer = null;
         var $el = $('<div />');
         $el.appendTo(window.explorerDiv);
-        
         var strProxy = strProxyUrl || "../wp-content/plugins/ckan/proxy.php?url=";
         var format = objTypeOptions.format || "csv";
         if (format == "json") format = "geojson";
+        
         var dataset = new recline.Model.Dataset({
             url: strProxy + strUrl,
             backend: format
@@ -190,7 +190,7 @@ wpCKANReclineViewer.prototype = {
                     var opts = options;
                     var url = opts.metaurl;
                     $.ajax({
-                        url: strProxy + opts.metaurl,
+                        url: strProxy + (strMetaUrl),
                         contentType: "json",
                         dataType: "json"
                     }).done(function(result) {

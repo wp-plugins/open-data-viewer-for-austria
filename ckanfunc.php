@@ -3,7 +3,7 @@
 Plugin Name: Open Data Viewer for Austria
 Plugin URI: http://apps4austria-open-data.ondics.de
 Description: Open Data Viewer for Austria brings the full power of open data from Austria to your Wordpress site.
-Version: 1.0.6
+Version: 1.0.7
 Author: Ondics GmbH
 Author URI: http://ondics.de
 License: None
@@ -103,7 +103,7 @@ function addCKANView ($attr, $content) {
 	$str = '
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
-			wpCKANReclineViewer.createDataViewer(".data-explorer-here' . $NumberOfGrids . '", "' . urlencode(str_replace("&amp;","&",$attr['url'])) . '", "' . $attr['type'] . '", ' . $strOptionsJson . ', "' . $attr['filters'] . '", "' . plugins_url("/proxy.php?url=", __FILE__) . '", "' . $attr['height'] . '", "' . $attr['width'] . '");
+			wpCKANReclineViewer.createDataViewer(".data-explorer-here' . $NumberOfGrids . '", "' . urlencode(str_replace("&amp;","&",$attr['url'])) . '&ispost=1&id=' . get_the_ID() . '", "' . urlencode(str_replace("&amp;","&",$attr['metaurl'])) . '&ispost=1&id=' . get_the_ID() . '", "' . $attr['type'] . '", ' . $strOptionsJson . ', "' . $attr['filters'] . '", "' . plugins_url("/proxy.php?url=", __FILE__) . '", "' . $attr['height'] . '", "' . $attr['width'] . '");
 				$.ajax({
 					url: "' . $attr["metaurl"] . '",
 					dataType: "json"
@@ -363,8 +363,8 @@ class CkanWidget extends WP_Widget
 			var popupHeight = 530;
 			var strClass = '.<?php echo $this->get_field_id( 'data-explorer-here' ); ?>';
 			var strType = '<?php echo $instance['type']; ?>';
-			var objOptions = <?php echo ($instance[$instance['type']] == "" ? "{}" : $instance[$instance['type']]); ?>;
-			var url = "<?php echo urlencode($instance['url']); ?>";
+			var objOptions = <?php echo ($instance[$instance['type']] == "" || $instance[$instance['type']] == "{" ? "{}" : $instance[$instance['type']]); ?>;
+			var url = "<?php echo urlencode($instance['url']); ?>" + "&ispost=0&id=<?php echo $this->number; ?>";
 			var strFilters = "<?php echo $instance['filters']; ?>";
 			var strFormat = "<?php echo $instance['format']; ?>";
 
@@ -378,7 +378,7 @@ class CkanWidget extends WP_Widget
 				break
 			}
 			objOptions.format = strFormat;
-			wpCKANReclineViewer.createDataViewer(strClass, url, strType, objOptions, strFilters, "<?php echo plugins_url("/proxy.php?url=", __FILE__); ?>" , widgetHeight, widgetWidth); // Widget
+			wpCKANReclineViewer.createDataViewer(strClass, url, '<?php echo urlencode(str_replace("&amp;","&",$instance['metaurl'])); ?>' + "&ispost=0&id=<?php echo $this->number; ?>", strType, objOptions, strFilters, "<?php echo plugins_url("/proxy.php?url=", __FILE__); ?>" , widgetHeight, widgetWidth); // Widget
 			$(".<?php echo $this->get_field_id( 'ZoomLink' );?> > a").click(function() {
 				wpCKANReclineViewer.createDataViewer("#<?php echo $this->get_field_id( 'ZoomPopup' ); ?>", url, strType, objOptions, strFilters, "<?php echo plugins_url("/proxy.php?url=", __FILE__); ?>",popupHeight, popupWidth); // Widget im Popup
 			});

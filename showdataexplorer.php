@@ -62,7 +62,7 @@ if (isset($aryCKanWidgets[$id])) {
 				var strClass = '.Explorer';
 				var strType = '<?php echo $aryData['type']; ?>';
 				var objOptions = <?php echo ($aryData[$aryData['type']] == "" ? "{}": $aryData[$aryData['type']]); ?>;
-				var url = "<?php echo urlencode($aryData['url']); ?>";
+				var url = "<?php echo urlencode($aryData['url']); ?>" + "&ispost=0&id=<?php echo $id; ?>";
 				var strFilters = "<?php echo $aryData['filters']; ?>";
                 wpCKANReclineViewer.createDataViewer(strClass, url, strType, objOptions, strFilters, "proxy.php?url=", 500, 500);
             });
